@@ -1,3 +1,4 @@
+import 'package:exam_helper/screens/subject/german_subject.dart';
 import 'package:exam_helper/screens/subject/math_subject.dart';
 import 'package:flutter/material.dart';
 
@@ -44,9 +45,9 @@ class HomePage extends StatelessWidget {
                         flex: 1,
                         child: Container(
                           decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(15),
-                              bottomLeft: Radius.circular(15),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(15),
+                              
                             ),
                             color: Color.fromRGBO(165, 216, 255, 1.0),
                           ),
@@ -95,7 +96,9 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => GermanTopics()));
+                  }, 
                   style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.zero,
                       shape: RoundedRectangleBorder(
@@ -142,7 +145,7 @@ class HomePage extends StatelessWidget {
                             color: Color.fromRGBO(252, 194, 215, 1.0),
                           ),
                           child: Center(
-                            child: Text('Mathematik',
+                            child: Text('Deutsch',
                               maxLines: 1,
                               softWrap: false,
                               overflow: TextOverflow.fade,
