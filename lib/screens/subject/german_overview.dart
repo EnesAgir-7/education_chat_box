@@ -108,7 +108,7 @@ class _GermanOverviewPageState extends State<GermanOverviewPage> {
       context,
       MaterialPageRoute(
           builder: (context) => ChatScreen(
-                overviewTopic: overview_main.germanTopic[widget.topicIndex] ?? '',
+                overviewTopic: overview.germanTopic[widget.topicIndex] ?? '',
                 topicName: widget.topicName,
               )),
     );

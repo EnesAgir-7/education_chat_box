@@ -29,17 +29,17 @@ class _GermanTopicPageState extends State<GermanTopicPage> {
               _subtopicContentTile('Overview', 'overview', const EdgeInsets.fromLTRB(8, 0, 4, 0), () => _openOverviewPage()),
 
               // Basics tile
-              _subtopicContentTile('Basic', 'basics', const EdgeInsets.fromLTRB(28, 10, 28, 8), () => {}),
+              _disabledSubtopicContentTile('Basic', 'basics', const EdgeInsets.fromLTRB(28, 10, 28, 8), () => null),
             ],
           )),
           Expanded(
             child: Row(
               children: [
                 // Exercises tile
-              _subtopicContentTile('Exercises', 'exercises', const EdgeInsets.fromLTRB(12, 0, 12, 0), () {}),
+              _disabledSubtopicContentTile('Exercises', 'exercises', const EdgeInsets.fromLTRB(12, 0, 12, 0), () => null),
 
               // Exams tile
-              _subtopicContentTile('Exams', 'exams', const EdgeInsets.fromLTRB(22, 0, 22, 8), () {})
+              _disabledSubtopicContentTile('Exams', 'exams', const EdgeInsets.fromLTRB(22, 0, 22, 8), () => null)
               ],
             )
           )
@@ -73,6 +73,67 @@ class _GermanTopicPageState extends State<GermanTopicPage> {
                 ]))));
   }
 
+
+  Expanded _disabledSubtopicContentTile(String label, String contentType, EdgeInsetsGeometry iconPadding, Function onTilePressed) {
+      double screenWidth = MediaQuery.of(context).size.width;
+      return Expanded(
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Container(
+                margin: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                // gradient:
+                borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+              ),
+                child: ElevatedButton(
+                  onPressed: () => onTilePressed(),
+                  style: ButtonStyle(
+                      padding: MaterialStateProperty.all(const EdgeInsets.all(0)),
+                      elevation: MaterialStateProperty.all<double>(0.0),
+                      backgroundColor: MaterialStateProperty.all(Colors.blue[100]),
+                      minimumSize: MaterialStateProperty.all(Size(0.0, 0.0)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ))),
+                  child:  Column(
+                    children: [
+                      Container(padding: const EdgeInsets.fromLTRB(8, 16, 8, 0), child: subtopicTileTitleText(label, screenWidth)),
+                      Expanded(
+                        child: Container(
+                          padding: iconPadding,
+                          child: _tileIcon(contentType)
+                        )
+                      ),
+                      
+                    ]
+                  )
+                )
+              )
+            ),
+            Positioned.fill(
+            child: Container(
+              margin: const EdgeInsets.all(8),
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(211, 211, 211, 0.6),//  Colors.grey.withOpacity(0.6),
+                borderRadius: BorderRadius.all(Radius.circular(15.0))
+              ),
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.block, color: Colors.red[400], size: 72),
+                  ]
+                )
+              )
+            )
+          )
+          ]
+        )
+      );
+    }
+
+
   Image _tileIcon(String contentType) {
     String iconFileName = 'assets/subject/topics/$contentType.png';
     return Image.asset(
@@ -104,6 +165,6 @@ class _GermanTopicPageState extends State<GermanTopicPage> {
     } else if (screenWidth < 351) {
       fontSize = 17.5;
     }
-    return Text(text, style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold, color: Colors.blue[400]));
+    return Text(text, style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold, color: Colors.red[400]));
   }
 }

@@ -16,7 +16,11 @@ class ChatProvider with ChangeNotifier {
 
   Future<void> sendMessageAndGetAnswers(
       {required String msg, required String chosenModelId, required String overviewText}) async {
-      String question = '''$msg\n \n If you can't find the answer to this question in the text below, write "I can't help you with this question" as a response, don't write anything else.\n $overviewText''';
+      String question = '''$msg
+      
+       Beziehen Sie die Frage direkt auf den Text, wenn es einen Zusammenhang gibt, antworten Sie, wenn Sie die Frage nicht auf den Text beziehen können, antworten Sie nicht "Ich kann Ihnen bei dieser Frage nicht helfen
+      
+       $overviewText''';
     if (chosenModelId.toLowerCase().startsWith("gpt")) {
       chatList.addAll(await ApiService.sendMessageGPT(
         message: question,

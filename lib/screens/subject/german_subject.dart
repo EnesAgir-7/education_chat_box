@@ -10,12 +10,12 @@ class GermanTopics extends StatefulWidget {
 
 class _GermanTopicsState extends State<GermanTopics> {
   List<String> _germanTopicList = [
-    'Handlung',
-    'Leitmotive',
-    'Lyrisches Ich',
-    'Spracherwerbsmodelle',
-    'Politisch-gesellschaftliche Kommunikation',
-    'Erzählweise, Sprache und Stil',
+    'Epochen',
+    'Literarische Gattungen Epik, Lyrik und Drama',
+    'Sprachliche Mittel',
+    'Rechtschreibung',
+    'Epochen',
+    'Literatur',
   ];
 
   @override
