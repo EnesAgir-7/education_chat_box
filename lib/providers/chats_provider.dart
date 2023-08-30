@@ -18,7 +18,7 @@ class ChatProvider with ChangeNotifier {
       {required String msg, required String chosenModelId, required String overviewText}) async {
       String question = '''$msg
       
-       Beziehen Sie die Frage direkt auf den Text, wenn es einen Zusammenhang gibt, antworten Sie, wenn Sie die Frage nicht auf den Text beziehen können, antworten Sie nicht "Ich kann Ihnen bei dieser Frage nicht helfen
+      Answer the question above in the language in which it is written. Pretending to be a teacher, relate the course notes you have taken from the course notes of the Abitur students below to the question above. If you cannot relate the question to the text, answer "I cannot answer this question". If there is a connection, try to give a short and clear answer. And give answers only in German,
       
        $overviewText''';
     if (chosenModelId.toLowerCase().startsWith("gpt")) {

@@ -15,7 +15,6 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsets.all(32),
         child: Column(
           children: [
-            _disableMath(),
             Expanded(
               child: Container(
               padding: const EdgeInsets.all(8),
@@ -35,7 +34,7 @@ class HomePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Expanded(
-                        flex: 1,
+                        flex: 2,
                         child: Container(
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.only(
@@ -84,6 +83,7 @@ class HomePage extends StatelessWidget {
                 ),
               )
             ),
+            _disableMath(),
           ],
         ),
       ),
@@ -136,7 +136,7 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              padding: const EdgeInsets.fromLTRB(16, 20, 16, 16),
+                              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                               child: Image.asset('assets/subject/math.png')),
                         ),
                       ),
@@ -176,7 +176,7 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(Icons.block, color: Colors.blue[400], size: 72),
+                    Icon(Icons.block, color: Colors.blue[400], size: 182),
                   ]
                 )
               )

@@ -14,7 +14,7 @@ class _GermanTopicsState extends State<GermanTopics> {
     'Literarische Gattungen Epik, Lyrik und Drama',
     'Sprachliche Mittel',
     'Rechtschreibung',
-    'Epochen',
+    'Epochen II',
     'Literatur',
   ];
 
