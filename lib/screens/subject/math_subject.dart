@@ -1,4 +1,4 @@
-import 'package:exam_helper/screens/subject/math_topicList.dart';
+import 'package:StudyWiz/screens/subject/math_topicList.dart';
 import 'package:flutter/material.dart';
 
 class MathTopics extends StatefulWidget {

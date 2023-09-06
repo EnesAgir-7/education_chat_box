@@ -1,4 +1,4 @@
-import 'package:exam_helper/screens/subject/german_topicList.dart';
+import 'package:StudyWiz/screens/subject/german_topicList.dart';
 import 'package:flutter/material.dart';
 
 class GermanTopics extends StatefulWidget {
@@ -50,7 +50,7 @@ class _GermanTopicsState extends State<GermanTopics> {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blue[700],
+                  color: Colors.red[700],
                 ),
               ),
               trailing: Icon(Icons.arrow_forward_ios),

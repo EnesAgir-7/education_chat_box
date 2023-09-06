@@ -1,5 +1,5 @@
-import 'package:exam_helper/models/models_model.dart';
-import 'package:exam_helper/services/api_service.dart';
+import 'package:StudyWiz/models/models_model.dart';
+import 'package:StudyWiz/services/api_service.dart';
 import 'package:flutter/cupertino.dart';
 
 class ModelsProvider with ChangeNotifier {

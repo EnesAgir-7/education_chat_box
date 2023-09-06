@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:exam_helper/constants/api_consts.dart';
-import 'package:exam_helper/models/chat_model.dart';
-import 'package:exam_helper/models/models_model.dart';
+import 'package:StudyWiz/constants/api_consts.dart';
+import 'package:StudyWiz/models/chat_model.dart';
+import 'package:StudyWiz/models/models_model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {

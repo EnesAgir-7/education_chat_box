@@ -1,7 +1,7 @@
-import 'package:exam_helper/screens/chat_screen.dart';
+import 'package:StudyWiz/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:exam_helper/overview/overview.dart' as overview;
-import 'package:exam_helper/overview/overview_main.dart' as overview_main;
+import 'package:StudyWiz/overview/overview.dart' as overview;
+import 'package:StudyWiz/overview/overview_main.dart' as overview_main;
 
 class OverviewPage extends StatefulWidget {
   final int topicIndex;
@@ -22,7 +22,7 @@ class _OverviewPageState extends State<OverviewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
+        // toolbarHeight:   ,
         title: RichText(
           text: TextSpan(
             children: [

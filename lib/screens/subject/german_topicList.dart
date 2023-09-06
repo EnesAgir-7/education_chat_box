@@ -1,5 +1,5 @@
-import 'package:exam_helper/screens/subject/german_overview.dart';
-import 'package:exam_helper/screens/subject/overview.dart';
+import 'package:StudyWiz/screens/subject/german_overview.dart';
+import 'package:StudyWiz/screens/subject/overview.dart';
 import 'package:flutter/material.dart';
 
 class GermanTopicPage extends StatefulWidget {
@@ -77,58 +77,35 @@ class _GermanTopicPageState extends State<GermanTopicPage> {
   Expanded _disabledSubtopicContentTile(String label, String contentType, EdgeInsetsGeometry iconPadding, Function onTilePressed) {
       double screenWidth = MediaQuery.of(context).size.width;
       return Expanded(
-        child: Stack(
-          children: [
-            Positioned.fill(
-              child: Container(
-                margin: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                // gradient:
-                borderRadius: const BorderRadius.all(Radius.circular(15.0)),
-              ),
-                child: ElevatedButton(
-                  onPressed: () => onTilePressed(),
-                  style: ButtonStyle(
-                      padding: MaterialStateProperty.all(const EdgeInsets.all(0)),
-                      elevation: MaterialStateProperty.all<double>(0.0),
-                      backgroundColor: MaterialStateProperty.all(Colors.blue[100]),
-                      minimumSize: MaterialStateProperty.all(Size(0.0, 0.0)),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                      ))),
-                  child:  Column(
-                    children: [
-                      Container(padding: const EdgeInsets.fromLTRB(8, 16, 8, 0), child: subtopicTileTitleText(label, screenWidth)),
-                      Expanded(
-                        child: Container(
-                          padding: iconPadding,
-                          child: _tileIcon(contentType)
-                        )
-                      ),
-                      
-                    ]
+        child: Container(
+          margin: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+          // gradient:
+          borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+        ),
+          child: ElevatedButton(
+            onPressed: () => onTilePressed(),
+            style: ButtonStyle(
+                padding: MaterialStateProperty.all(const EdgeInsets.all(0)),
+                elevation: MaterialStateProperty.all<double>(0.0),
+                backgroundColor: MaterialStateProperty.all(Colors.blue[100]),
+                minimumSize: MaterialStateProperty.all(Size(0.0, 0.0)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ))),
+            child:  Column(
+              children: [
+                Container(padding: const EdgeInsets.fromLTRB(8, 16, 8, 0), child: subtopicTileTitleText(label, screenWidth)),
+                Expanded(
+                  child: Container(
+                    padding: iconPadding,
+                    child: _tileIcon(contentType)
                   )
-                )
-              )
-            ),
-            Positioned.fill(
-            child: Container(
-              margin: const EdgeInsets.all(8),
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(211, 211, 211, 0.6),//  Colors.grey.withOpacity(0.6),
-                borderRadius: BorderRadius.all(Radius.circular(15.0))
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.block, color: Colors.red[400], size: 72),
-                  ]
-                )
-              )
+                ),
+                
+              ]
             )
           )
-          ]
         )
       );
     }

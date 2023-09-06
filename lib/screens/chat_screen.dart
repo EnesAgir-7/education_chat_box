@@ -1,9 +1,9 @@
 import 'dart:developer';
 
-import 'package:exam_helper/constants/constants.dart';
-import 'package:exam_helper/providers/chats_provider.dart';
-import 'package:exam_helper/services/services.dart';
-import 'package:exam_helper/widgets/chat_widget.dart';
+import 'package:StudyWiz/constants/constants.dart';
+import 'package:StudyWiz/providers/chats_provider.dart';
+import 'package:StudyWiz/services/services.dart';
+import 'package:StudyWiz/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';

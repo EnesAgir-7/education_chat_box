@@ -1,4 +1,4 @@
-import 'package:exam_helper/screens/subject/overview.dart';
+import 'package:StudyWiz/screens/subject/overview.dart';
 import 'package:flutter/material.dart';
 
 class TopicDetailPage extends StatefulWidget {

@@ -1,5 +1,5 @@
-import 'package:exam_helper/providers/models_provider.dart';
-import 'package:exam_helper/widgets/text_widget.dart';
+import 'package:StudyWiz/providers/models_provider.dart';
+import 'package:StudyWiz/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';

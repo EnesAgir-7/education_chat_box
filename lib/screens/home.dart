@@ -1,5 +1,5 @@
-import 'package:exam_helper/screens/subject/german_subject.dart';
-import 'package:exam_helper/screens/subject/math_subject.dart';
+import 'package:StudyWiz/screens/subject/german_subject.dart';
+import 'package:StudyWiz/screens/subject/math_subject.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -83,107 +83,88 @@ class HomePage extends StatelessWidget {
                 ),
               )
             ),
-            _disableMath(),
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+                child: ElevatedButton(
+                    onPressed: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (_) => MathTopics()));
+                    }, 
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        side: const BorderSide(
+                          color: Color.fromRGBO(165, 216, 255, 1.0),
+                          width: 2
+                        )
+                      ),
+                      backgroundColor: Color.fromRGBO(165, 216, 255, 1.0),
+                      elevation: 0
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(height: 30,),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(15),
+                                
+                              ),
+                              color: Color.fromRGBO(165, 216, 255, 1.0),
+                            ),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromRGBO(165, 216, 255, 1.0),
+                                  borderRadius: BorderRadius.circular(15),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.blue[200] ?? Colors.grey,
+                                      offset: const Offset(0.0, 0.0),
+                                    ),
+                                  ],
+                                ),
+                                padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                                child: Image.asset('assets/subject/math.png')),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(15),
+                                bottomRight: Radius.circular(15),
+                              ),
+                              color: Color.fromRGBO(165, 216, 255, 1.0),
+                            ),
+                            child: Center(
+                              child: Text('Mathematik',
+                                maxLines: 1,
+                                softWrap: false,
+                                overflow: TextOverflow.fade,
+                                style: TextStyle(color: Colors.blue[700], fontWeight: FontWeight.w800, fontSize: 32)
+                              )
+                            )
+                          ),
+                        ),
+                      ],
+                    )
+                  ),
+              )
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _disableMath(){
-    return Expanded(
-      child: Stack(
-        children: [
-          Positioned.fill(
-            child: Container(
-              child: ElevatedButton(
-                  onPressed: ()=>null, 
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      side: const BorderSide(
-                        color: Color.fromRGBO(165, 216, 255, 1.0),
-                        width: 2
-                      )
-                    ),
-                    backgroundColor: Color.fromRGBO(165, 216, 255, 1.0),
-                    elevation: 0
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(height: 30,),
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(15),
-                              
-                            ),
-                            color: Color.fromRGBO(165, 216, 255, 1.0),
-                          ),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Color.fromRGBO(165, 216, 255, 1.0),
-                                borderRadius: BorderRadius.circular(15),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.blue[200] ?? Colors.grey,
-                                    offset: const Offset(0.0, 0.0),
-                                  ),
-                                ],
-                              ),
-                              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                              child: Image.asset('assets/subject/math.png')),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(15),
-                              bottomRight: Radius.circular(15),
-                            ),
-                            color: Color.fromRGBO(165, 216, 255, 1.0),
-                          ),
-                          child: Center(
-                            child: Text('Mathematik',
-                              maxLines: 1,
-                              softWrap: false,
-                              overflow: TextOverflow.fade,
-                              style: TextStyle(color: Colors.blue[700], fontWeight: FontWeight.w800, fontSize: 32)
-                            )
-                          )
-                        ),
-                      ),
-                    ],
-                  )
-                ),
-            )
-          ), 
-          Positioned.fill(
-            child: Container(
-              margin: const EdgeInsets.all(8),
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(211, 211, 211, 0.6),//  Colors.grey.withOpacity(0.6),
-                borderRadius: BorderRadius.all(Radius.circular(15.0))
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.block, color: Colors.blue[400], size: 182),
-                  ]
-                )
-              )
-            )
-          )
-        ],
-      )
-    );
-  }
+  // Widget _disableMath(){
+  //   return 
+  // }
 }

@@ -1,5 +1,5 @@
-import 'package:exam_helper/providers/models_provider.dart';
-import 'package:exam_helper/screens/home.dart';
+import 'package:StudyWiz/providers/models_provider.dart';
+import 'package:StudyWiz/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

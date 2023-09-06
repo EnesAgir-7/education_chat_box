@@ -1,7 +1,7 @@
-import 'package:exam_helper/screens/chat_screen.dart';
+import 'package:StudyWiz/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:exam_helper/overview/german_overview.dart' as overview;
-import 'package:exam_helper/overview/german_overview.dart' as overview_main;
+import 'package:StudyWiz/overview/german_overview.dart' as overview;
+import 'package:StudyWiz/overview/german_overview.dart' as overview_main;
 import 'package:html_parser_plus/html_parser_plus.dart';
 import 'package:html/parser.dart' as html;
 
@@ -22,40 +22,30 @@ class _GermanOverviewPageState extends State<GermanOverviewPage> {
 
   String htmlString = '';
   String htmlStringDisplay = '';
+  String appBarText ='';
 
   @override
   void initState() {
     htmlString = overview.germanTopic[widget.topicIndex]?? '';
     var documant = html.parse(htmlString);
     htmlStringDisplay = documant.outerHtml;
+    appBarText = widget.topicName;
     super.initState();
+    if (appBarText.length > 20) {
+      appBarText = appBarText.substring(0, 20) + "...";
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
-        title: RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: widget.topicName,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
-                  fontSize: 32,
-                ),
-              ),
-              TextSpan(text: ' '),
-              TextSpan(
-                text: 'overview',
-                style: TextStyle(
-                  fontStyle: FontStyle.italic,
-                  fontSize: 32,
-                ),
-              ),
-            ],
+        title: Text(
+          appBarText,
+          style: TextStyle(
+            // fontWeight: FontWeight.bold,
+            // fontStyle: FontStyle.italic,
+            // fontSize: 32,
           ),
         ),
       ),

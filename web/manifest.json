@@ -1,6 +1,6 @@
 {
-    "name": "exam_helper",
-    "short_name": "exam_helper",
+    "name": "StudyWiz",
+    "short_name": "StudyWiz",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
